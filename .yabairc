@@ -1,0 +1,70 @@
+# ~/.yabairc				
+# leonard fischer 
+
+ __     __      ____          _____   _____   _____ 
+ \ \   / //\   |  _ \   /\   |_   _| |  __ \ / ____|
+  \ \_/ //  \  | |_) | /  \    | |   | |__) | |     
+   \   // /\ \ |  _ < / /\ \   | |   |  _  /| |     
+    | |/ ____ \| |_) / ____ \ _| |_  | | \ \| |____ 
+    |_/_/    \_\____/_/    \_\_____| |_|  \_\\_____|
+							    
+CONFIGURATION FILE FOR YABAI WINDOW MANAGER ON MAC OS CATALINA
+
+
+########################################
+#--------------------------------------#
+Debug output and error reporting 
+#--------------------------------------#
+########################################
+
+HOMEBREW_PREFIX = /usr/local
+# Debug file location: HOMEBREW_PREFIX/var/log/yabai/
+yabai -m config debug_output on 
+# view the last lines of the error log 
+# tail -f /usr/local/var/log/yabai/yabai.err.log
+# view the last lines of the debug log
+# tail -f /usr/local/var/log/yabai/yabai.out.log
+
+########################################
+#--------------------------------------#
+Tiling options
+#--------------------------------------#
+########################################
+
+#--------------------------------------#
+Layout
+#--------------------------------------#
+
+# bsp or float (default: bsp)
+yabai -m config layout bsp
+
+# Override default layout for space 1 only
+yabai -m config --space 1 layout float
+
+# New window spawns to the right if vertical split, or bottom if horizontal split
+yabai -m config window_placement second_child
+
+#--------------------------------------#
+Padding and gaps
+#--------------------------------------#
+
+# Set all padding and gaps to 20pt (default: 0)
+yabai -m config top_padding    20
+yabai -m config bottom_padding 20
+yabai -m config left_padding   20
+yabai -m config right_padding  20
+yabai -m config window_gap     20
+
+# Override gaps for space 1 only
+yabai -m config --space 1 window_gap 0
+
+#--------------------------------------#
+Split ratios
+#--------------------------------------#
+
+# Defines how much space a the old window occupies 20% of the available space
+# autobalance on or off (default: off)
+yabai -m config auto_balance on
+# on or off (default: off)
+# yabai -m config auto_balance off
+
