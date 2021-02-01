@@ -1,0 +1,132 @@
+# ~/.skhdrc
+# _____ _   __ _   _______________   __
+#/  ___| | / /| | | |  _  \ ___ \ \ / /
+#\ `--.| |/ / | |_| | | | | |_/ /\ V / 
+# `--. \    \ |  _  | | | |    / /   \ 
+#/\__/ / |\  \| | | | |/ /| |\ \/ /^\ \
+#\____/\_| \_/\_| |_/___/ \_| \_\/   \/
+                                      
+# CONFIGURATION FILE FOR SKHD HOTKEY DAEMON
+
+#--------------------------------------#
+# Startup hotkeys
+#--------------------------------------#
+
+# open Terminal
+shift + cmd - return: open -n /Volumes/Macintosh\ HD/Applications/iTerm.app
+
+# open Firefox
+shift + cmd - f: open -n /Volumes/Macintosh\ HD/Applications/Firefox.app
+
+# shift + cmd -v: open -a Visual Studio Code # open current folder in iTermtab
+
+#--------------------------------------#
+# Window Management
+#--------------------------------------#
+
+# focus window
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
+
+# cmd - j : yabai -m window --focus prev
+# cmd - k : yabai -m window --focus next
+
+# swap window
+shift + alt - h : yabai -m window --swap west
+shift + alt - j : yabai -m window --swap south
+shift + alt - k : yabai -m window --swap north
+shift + alt - l : yabai -m window --swap east
+
+# move window
+shift + cmd + alt - h : yabai -m window --warp west
+shift + cmd + alt - j : yabai -m window --warp south
+shift + cmd + alt - k : yabai -m window --warp north
+shift + cmd + alt - l : yabai -m window --warp east
+
+# toggle floating
+alt - t : yabai -m window --toggle float;\
+           yabai -m window --grid 4:4:1:1:2:2
+
+# increase window size
+shift + cmd - h : yabai -m window --resize left:-20:0
+shift + cmd - k : yabai -m window --resize top:0:-20
+
+# decrease window size
+shift + cmd - l : yabai -m window --resize right:20:0
+shift + cmd - j : yabai -m window --resize top:0:20
+
+#--------------------------------------#
+# Space management
+#--------------------------------------#
+
+# create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
+# TODO: Make this command work with indexed spaces
+shift + cmd - return : yabai -m space --create && \
+                  index="$(yabai -m query --displays --display | jq '.spaces[-1]')" && \
+                  yabai -m window --space "${index}" && \
+                  yabai -m space --focus "${index}"
+
+
+# create desktop and follow focus - uses jq for parsing json (brew install jq)
+# TODO: Make this command work with indexed spaces
+#cmd - return : yabai -m space --create;\
+#                  index="$(yabai -m query --displays --display | jq '.spaces[-1]')" && \
+#                  yabai -m space --focus "${index}"
+
+# destroy desktop
+# alt - w : yabai -m space --destroy
+
+# fast focus desktop
+alt - e: yabai -m space --focus recent
+ctrl - tab : yabai -m space --focus prev || yabai -m space --focus last
+alt - tab : yabai -m space --focus next || yabai -m space --focus first
+
+alt - 1 : yabai -m space --focus 1
+alt - 2 : yabai -m space --focus 2
+alt - 3 : yabai -m space --focus 3
+alt - 4 : yabai -m space --focus 4
+alt - 5 : yabai -m space --focus 5
+alt - 6 : yabai -m space --focus 6
+alt - 7 : yabai -m space --focus 7
+alt - 8 : yabai -m space --focus 8
+alt - 9 : yabai -m space --focus 9
+alt - 0 : yabai -m space --focus 10
+alt - u : yabai -m space --focus 11
+alt - i : yabai -m space --focus 12
+alt - o : yabai -m space --focus 13
+alt - p : yabai -m space --focus 14
+alt - a : yabai -m space --focus 15
+alt - s : yabai -m space --focus 16
+
+# send window to desktop and follow focus
+# shift + cmd - x : yabai -m window --space recent; yabai -m space --focus recent
+shift + cmd - u : yabai -m window --space prev; yabai -m space --focus prev
+shift + cmd - o : yabai -m window --space next; yabai -m space --focus next
+shift + cmd - 1 : yabai -m window --space  1; yabai -m space --focus 1
+shift + cmd - 2 : yabai -m window --space  2; yabai -m space --focus 2
+shift + cmd - 3 : yabai -m window --space  3; yabai -m space --focus 3
+shift + cmd - 4 : yabai -m window --space  4; yabai -m space --focus 4
+shift + cmd - 5 : yabai -m window --space  5; yabai -m space --focus 5
+shift + cmd - 6 : yabai -m window --space  6; yabai -m space --focus 6
+shift + cmd - 7 : yabai -m window --space  7; yabai -m space --focus 7
+shift + cmd - 8 : yabai -m window --space  8; yabai -m space --focus 8
+shift + cmd - 9 : yabai -m window --space  9; yabai -m space --focus 9
+shift + cmd - 0 : yabai -m window --space 10; yabai -m space --focus 10
+shift + cmd - u : yabai -m window --space 11; yabai -m space --focus 11
+shift + cmd - i : yabai -m window --space 12; yabai -m space --focus 12
+shift + cmd - o : yabai -m window --space 13; yabai -m space --focus 13
+#shift + cmd - p : yabai -m window --space 14; yabai -m space --focus 14
+shift + cmd - a : yabai -m window --space 15; yabai -m space --focus 15
+shift + cmd - s : yabai -m window --space 16; yabai -m space --focus 16
+
+
+#--------------------------------------#
+# Display management
+#--------------------------------------#
+shift + alt - 2 : yabai -m display --focus recent
+
+# move window to display focused before the current one
+shift + alt - 3 : yabai -m window --display recent
+
