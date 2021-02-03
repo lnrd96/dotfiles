@@ -1,18 +1,52 @@
+# # # # # # # # # # # # # # # # #
+#           _                   #
+#          | |                  #
+#   _______| |__    _ __ ___    #
+#  |_  / __| '_ \  | '__/ __|   #
+#   / /\__ \ | | | | | | (__    #
+#  /___|___/_| |_| |_|  \___|   #
+#                               #
+#                               #
+# # # # # # # # # # # # # # # # #
+
+# # # Path # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
 export ZSH=~/.oh-my-zsh
 export MANPAGER="vim -c MANPAGER -"
 export PATH=~/.sc/usr/bin:~/.node-bin/bin:$PATH
-export PATH=$PATH:/opt/miniconda3/bin/
 
 CASE_SENSITIVE="true"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
+# # # Plugins # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-#plugins
 plugins=(git vi-mode z)
 
 source $ZSH/oh-my-zsh.sh
 
-# # # POWERLEVEL9K_CONFIG # # #
+# # # Aliases # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+alias python="/usr/bin/python3"
+alias python3="/usr/bin/python3"
+
+alias pip="/usr/bin/pip3"
+alias pip3="/usr/bin/pip3"
+
+alias viscala="rlwrap scala -Xnojline"
+
+alias toflx="/proj/ciptmp/ux97uwef/leon"
+
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+function cd {
+    builtin cd "$@" && ls -F
+}
+
+alias k="cd\ .."
+
+alias gitdoc="open ~/Programming/gitcheatsheet.pdf"
+
+# # # POWERLEVEL9K_CONFIG # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
 P9KGT_BACKGROUND="dark"
 P9KGT_COLORS="light"
@@ -156,35 +190,4 @@ then
 
 	fi
 
-# # # END: POWERLEVEL9K_CONFIG # # #
-
-
-# # # ALIASES # # #
-
-alias viscala="rlwrap scala -Xnojline"
-toflx="/proj/ciptmp/ux97uwef/leon"
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-function cd {
-    builtin cd "$@" && ls -F
-}
-
-
-
-# # # MINICONDA # # #
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/opt/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/opt/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-# # # MINICONDA # # #
+# # # END: POWERLEVEL9K_CONFIG # # # # # # # # # # # # # # # # # # # # # # # # # # 

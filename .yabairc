@@ -6,7 +6,7 @@
 #    | |/ ____ \| |_) / ____ \ _| |_  | | \ \| |____ 
 #    |_/_/    \_\____/_/    \_\_____| |_|  \_\\_____|
 							    
-# CONFIGURATION FILE FOR YABAI WINDOW MANAGER ON MAC OS CATALINA
+# CONFIGURATION FILE FOR YABAI WINDOW MANAGER ON MAC OS
 
 
 ########################################
@@ -45,7 +45,9 @@ yabai -m config window_placement second_child
 #--------------------------------------#
 # Padding and gaps
 #--------------------------------------# 
-# Set all padding and gaps to 3pt (default: 0)
+
+
+# padding and gaps (default: 0)
 yabai -m config top_padding    26
 # yabai -m config bottom_padding 3
 # yabai -m config left_padding   3
@@ -154,9 +156,6 @@ spacebar -m config clock_format      "%d/%m/%y %R"
 yabai -m rule --add app="^lystemeinstellungen$" manage=off
 yabai -m rule --add app="^BIAS FX 2$" manage=off
 
-echo "yabai configuration loaded.."
-
-
 ########################################
 #--------------------------------------#
 # Displays
@@ -164,3 +163,6 @@ echo "yabai configuration loaded.."
 ########################################
 
 yabai --add event=display_added action=
+
+
+echo "yabai configuration loaded.."
