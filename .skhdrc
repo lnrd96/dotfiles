@@ -63,17 +63,17 @@ shift + cmd - j : yabai -m window --resize top:0:20
 
 # create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
 # TODO: Make this command work with indexed spaces
-shift + cmd - return : yabai -m space --create && \
-                  index="$(yabai -m query --displays --display | jq '.spaces[-1]')" && \
-                  yabai -m window --space "${index}" && \
-                  yabai -m space --focus "${index}"
+# shift + cmd - return : yabai -m space --create && \
+#                   index="$(yabai -m query --displays --display | jq '.spaces[-1]')" && \
+#                   yabai -m window --space "${index}" && \
+#                  yabai -m space --focus "${index}"
 
 
 # create desktop and follow focus - uses jq for parsing json (brew install jq)
 # TODO: Make this command work with indexed spaces
-#cmd - return : yabai -m space --create;\
-#                  index="$(yabai -m query --displays --display | jq '.spaces[-1]')" && \
-#                  yabai -m space --focus "${index}"
+cmd - return: yabai -m space --create; \
+                  index="$(yabai -m query --displays --display | jq '.spaces[-1]')" && \
+                  yabai -m space --focus "${index}"
 
 # destroy desktop
 # alt - w : yabai -m space --destroy

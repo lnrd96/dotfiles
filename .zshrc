@@ -26,11 +26,11 @@ source $ZSH/oh-my-zsh.sh
 
 # # # Aliases # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-alias python="/usr/bin/python3"
-alias python3="/usr/bin/python3"
+# alias python="/usr/bin/python3"
+# alias python3="/usr/bin/python3"
 
-alias pip="/usr/bin/pip3"
-alias pip3="/usr/bin/pip3"
+# alias pip="/usr/bin/pip3"
+# alias pip3="/usr/bin/pip3"
 
 alias viscala="rlwrap scala -Xnojline"
 
@@ -42,9 +42,10 @@ function cd {
     builtin cd "$@" && ls -F
 }
 
-alias k="cd\ .."
+alias k="cd .."
 
-alias gitdoc="open ~/Programming/gitcheatsheet.pdf"
+alias gitdoc="open ~/Programming/cheatsheets/git_cheatsheet.pdf"
+alias mddoc="open ~/Programming/cheatsheets/markdown_cheatsheet.pdf"
 
 # # # POWERLEVEL9K_CONFIG # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
