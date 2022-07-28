@@ -50,12 +50,12 @@ alt - t : yabai -m window --toggle float;\
            yabai -m window --grid 4:4:1:1:2:2
 
 # increase window size
-shift + cmd - h : yabai -m window --resize left:-20:0
-shift + cmd - k : yabai -m window --resize top:0:-20
+shift + ctrl - h : yabai -m window --resize left:-20:0
+shift + ctrl - k : yabai -m window --resize top:0:-20
 
 # decrease window size
-shift + cmd - l : yabai -m window --resize right:20:0
-shift + cmd - j : yabai -m window --resize top:0:20
+shift + ctrl - l : yabai -m window --resize right:20:0
+shift + ctrl - j : yabai -m window --resize top:0:20
 
 #--------------------------------------#
 # Space management
@@ -71,9 +71,9 @@ shift + cmd - j : yabai -m window --resize top:0:20
 
 # create desktop and follow focus - uses jq for parsing json (brew install jq)
 # TODO: Make this command work with indexed spaces
-cmd - return: yabai -m space --create; \
-                  index="$(yabai -m query --displays --display | jq '.spaces[-1]')" && \
-                  yabai -m space --focus "${index}"
+#cmd - return: yabai -m space --create;\
+#                 index="$(yabai -m query --displays --display | jq '.spaces[-1]')" && \
+#                  yabai -m space --focus "${index}"
 
 # destroy desktop
 # alt - w : yabai -m space --destroy
@@ -96,9 +96,12 @@ alt - 0 : yabai -m space --focus 10
 alt - u : yabai -m space --focus 11
 alt - i : yabai -m space --focus 12
 alt - o : yabai -m space --focus 13
-alt - p : yabai -m space --focus 14
-alt - a : yabai -m space --focus 15
-alt - s : yabai -m space --focus 16
+alt - a : yabai -m space --focus 14
+alt - s : yabai -m space --focus 15
+alt - d : yabai -m space --focus 16
+alt - b : yabai -m space --focus 17
+alt - n : yabai -m space --focus 18
+alt - m : yabai -m space --focus 19
 
 # send window to desktop and follow focus
 # shift + cmd - x : yabai -m window --space recent; yabai -m space --focus recent
@@ -117,9 +120,9 @@ shift + cmd - 0 : yabai -m window --space 10; yabai -m space --focus 10
 shift + cmd - u : yabai -m window --space 11; yabai -m space --focus 11
 shift + cmd - i : yabai -m window --space 12; yabai -m space --focus 12
 shift + cmd - o : yabai -m window --space 13; yabai -m space --focus 13
-#shift + cmd - p : yabai -m window --space 14; yabai -m space --focus 14
-shift + cmd - a : yabai -m window --space 15; yabai -m space --focus 15
-shift + cmd - s : yabai -m window --space 16; yabai -m space --focus 16
+shift + cmd - a : yabai -m window --space 14; yabai -m space --focus 14
+shift + cmd - s : yabai -m window --space 15; yabai -m space --focus 15
+shift + cmd - d : yabai -m window --space 16; yabai -m space --focus 16
 
 
 #--------------------------------------#

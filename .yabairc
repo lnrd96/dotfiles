@@ -48,25 +48,61 @@ yabai -m config window_placement second_child
 
 
 # padding and gaps (default: 0)
-yabai -m config top_padding    26
+yabai -m config top_padding    30
 # yabai -m config bottom_padding 3
 # yabai -m config left_padding   3
 # yabai -m config right_padding  3
 # yabai -m config window_gap     3
 
 # Override gaps for space 15  only
-yabai -m config --space 15 top_padding 46
+# yabai -m config --space 15 top_padding 46
+# yabai -m config --space 15 window_gap 20
+# yabai -m config --space 15 bottom_padding 20
+# yabai -m config --space 15 left_padding   20
+# yabai -m config --space 15 right_padding  20
+
+# Override gaps for spaces >9
+yabai -m config --space 16 top_padding 55
+yabai -m config --space 16 window_gap 20
+yabai -m config --space 16 bottom_padding 20
+yabai -m config --space 16 left_padding   20
+yabai -m config --space 16 right_padding  20
+
+yabai -m config --space 15 top_padding 55
 yabai -m config --space 15 window_gap 20
 yabai -m config --space 15 bottom_padding 20
 yabai -m config --space 15 left_padding   20
 yabai -m config --space 15 right_padding  20
 
-# Override gaps for space 16  only
-yabai -m config --space 16 top_padding 46
-yabai -m config --space 16 window_gap 20
-yabai -m config --space 16 bottom_padding 20
-yabai -m config --space 16 left_padding   20
-yabai -m config --space 16 right_padding  20
+yabai -m config --space 14 top_padding 55
+yabai -m config --space 14 window_gap 20
+yabai -m config --space 14 bottom_padding 20
+yabai -m config --space 14 left_padding   20
+yabai -m config --space 14 right_padding  20
+
+yabai -m config --space 13 top_padding 55
+yabai -m config --space 13 window_gap 20
+yabai -m config --space 13 bottom_padding 60
+yabai -m config --space 13 left_padding   60
+yabai -m config --space 13 right_padding  60
+
+yabai -m config --space 12 top_padding 55
+yabai -m config --space 12 window_gap 20
+yabai -m config --space 12 bottom_padding 20
+yabai -m config --space 12 left_padding   20
+yabai -m config --space 12 right_padding  20
+
+yabai -m config --space 11 top_padding 55
+yabai -m config --space 11 window_gap 20
+yabai -m config --space 11 bottom_padding 20
+yabai -m config --space 11 left_padding   20
+yabai -m config --space 11 right_padding  20
+
+yabai -m config --space 10 top_padding 55
+yabai -m config --space 10 window_gap 20
+yabai -m config --space 10 bottom_padding 20
+yabai -m config --space 10 left_padding   20
+yabai -m config --space 10 right_padding  20
 
 #--------------------------------------#
 # Split ratios
@@ -123,6 +159,8 @@ yabai -m config normal_window_opacity 0.95
 #--------------------------------------#
 ########################################
 
+yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
+
 # Padding
 
 # add 20 padding to the top and 0 padding to the bottom of every space located on the main display
@@ -133,18 +171,8 @@ yabai -m config status_bar                   off
 # yabai -m external_bar all:20:20
 yabai -m signal --add event=space_changed \
     action=ueberrefresh
-#!/usr/bin/env sh
 
-# see .config/spacebar !
-spacebar -m config text_font         "Helvetica Neue:Bold:12.0"
-spacebar -m config icon_font         "Font Awesome 5 Brands:Regular:14"
-spacebar -m config background_color  0xff202020
-spacebar -m config foreground_color  0xffa8a8a8
-spacebar -m config space_icon_strip    3 4 5 6 7    11 12 13 14 15
-spacebar -m config power_icon_strip
-spacebar -m config space_icon
-spacebar -m config clock_icon        
-spacebar -m config clock_format      "%d/%m/%y %R"
+#!/usr/bin/env sh
 
 ########################################
 #--------------------------------------#
@@ -154,7 +182,6 @@ spacebar -m config clock_format      "%d/%m/%y %R"
 
 # float certain apps
 yabai -m rule --add app="^lystemeinstellungen$" manage=off
-yabai -m rule --add app="^BIAS FX 2$" manage=off
 
 ########################################
 #--------------------------------------#

@@ -47,6 +47,8 @@ alias k="cd .."
 alias gitdoc="open ~/Programming/cheatsheets/git_cheatsheet.pdf"
 alias mddoc="open ~/Programming/cheatsheets/markdown_cheatsheet.pdf"
 
+alias mgrep="grep -r -i -n"
+
 # # # POWERLEVEL9K_CONFIG # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
 P9KGT_BACKGROUND="dark"
